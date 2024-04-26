@@ -30,11 +30,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.stealthx.firstquotesapp.DataManager
 import com.stealthx.firstquotesapp.R
 import com.stealthx.firstquotesapp.models.Quotes
 
 @Composable
-fun QuotesResource(_quote: String, _author: String, onClick: () -> Unit) {
+fun QuotesResource(_quote: String, _author: String) {
     Card(
         colors = CardDefaults.cardColors(
             containerColor = Color(0xFFEEEEEE),
@@ -45,7 +46,9 @@ fun QuotesResource(_quote: String, _author: String, onClick: () -> Unit) {
         modifier = Modifier
             .fillMaxWidth(1f)
             .padding(horizontal = 15.dp, vertical = 8.dp)
-            .clickable { onClick() }
+            .clickable {
+                DataManager.switchScreens(_quote, _author)
+            }
     ) {
         Row {
 
@@ -84,7 +87,7 @@ private fun quotesAndAuthors(_quote: String, _author :String) {
         Spacer(modifier = Modifier.padding(vertical = 5.dp))
 
         Text(
-            text = _author,
+            text = "- $_author",
             fontWeight = FontWeight.Medium,
             fontSize = 16.sp,
             fontFamily = FontFamily(Font(R.font.urania)),

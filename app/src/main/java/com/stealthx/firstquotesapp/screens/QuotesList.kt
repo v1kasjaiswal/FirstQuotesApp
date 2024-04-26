@@ -7,15 +7,13 @@ import com.stealthx.firstquotesapp.DataManager
 import com.stealthx.firstquotesapp.models.Quotes
 
 @Composable
-fun showQuotesList(data: List<Quotes>, onClick : () -> Unit) {
+fun showQuotesList(data: List<Quotes>,  ) {
     LazyColumn {
         items(data.size) { quote ->
             QuotesResource(
                 _quote = data[quote].quote,
                 _author = data[quote].author 
-            ) {
-                onClick()
-            }
+            )
         }
     }
 }

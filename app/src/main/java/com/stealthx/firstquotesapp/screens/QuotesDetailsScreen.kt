@@ -1,5 +1,6 @@
 package com.stealthx.firstquotesapp.screens
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -33,12 +34,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.stealthx.firstquotesapp.DataManager
 import com.stealthx.firstquotesapp.R
+import com.stealthx.firstquotesapp.Screens
 import com.stealthx.firstquotesapp.models.Quotes
 
 
 @Composable
 fun showQuoteDetails(_quote: String, _author: String) {
+
+    BackHandler {
+        DataManager.currentScreen.value = Screens.LISTSCREEN
+    }
+
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -100,7 +108,7 @@ private fun quoteDetails(_quote: String, _author: String) {
     )
 
     Text(
-        text = _author,
+        text = "- $_author",
         fontFamily = FontFamily(Font(R.font.urania)),
         fontSize = 18.sp,
         modifier = Modifier

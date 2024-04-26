@@ -10,6 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import com.stealthx.firstquotesapp.screens.QuotesAppBar
 import com.stealthx.firstquotesapp.screens.loadingScreen
+import com.stealthx.firstquotesapp.screens.showQuoteDetails
 import com.stealthx.firstquotesapp.screens.showQuotesList
 import com.stealthx.firstquotesapp.ui.theme.FirstQuotesAppTheme
 import kotlinx.coroutines.CoroutineScope
@@ -36,13 +37,28 @@ class MainActivity : ComponentActivity() {
 fun App() {
     Column {
         QuotesAppBar()
-        if (DataManager.isDataLoaded.value){    // States are Thread Safe
-            showQuotesList(data = DataManager.data) {
+        if (DataManager.isDataLoaded.value){ // States are Thread Safe
+            if (DataManager.currentScreen.value == Screens.LISTSCREEN){
+                showQuotesList(data = DataManager.data)
+            }
+            else{
+                var _quote = DataManager.currentQuote!!
+                var _author = DataManager.currentAuthor!!
+
+                DataManager.switchScreens(_quote,_author)
+
+                showQuoteDetails(_quote = _quote, _author = _author)
             }
         }
         else{
             loadingScreen()
         }
     }
+}
+
+
+enum class Screens{
+    LISTSCREEN,
+    DETAILSCREEN
 }
 
