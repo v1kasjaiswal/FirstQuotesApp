@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         CoroutineScope(Dispatchers.IO).launch {
-            delay(3000)
+            delay(1500)
             DataManager.loadAssetsFromFile(applicationContext)
         }
         setContent {
@@ -61,4 +61,3 @@ enum class Screens{
     LISTSCREEN,
     DETAILSCREEN
 }
-

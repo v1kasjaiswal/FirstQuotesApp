@@ -41,15 +41,6 @@ fun QuotesAppBar() {
             modifier = Modifier.padding(start = 15.dp)
         )
 
-        Image(
-            painter = painterResource(id = R.drawable.image),
-            contentDescription = "Vikas Jaiswal",
-            modifier = Modifier
-                .padding(9.dp)
-                .clip(CircleShape)
-                .align(Alignment.CenterEnd)
-
-        )
     }
 }
 
@@ -69,10 +60,4 @@ fun loadingScreen() {
             fontFamily = FontFamily(Font(R.font.urania))
         )
     }
-}
-
-@Preview(showSystemUi = true)
-@Composable
-private fun showPreview() {
-//    loadingScreen()
 }

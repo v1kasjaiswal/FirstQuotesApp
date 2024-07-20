@@ -45,10 +45,5 @@ object DataManager {
             currentAuthor = _author
             currentScreen.value = Screens.DETAILSCREEN
         }
-        else{
-            currentScreen.value = Screens.DETAILSCREEN
-        }
     }
 }
-
-

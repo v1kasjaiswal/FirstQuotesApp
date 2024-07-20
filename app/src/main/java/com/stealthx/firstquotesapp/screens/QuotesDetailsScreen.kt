@@ -117,10 +117,3 @@ private fun quoteDetails(_quote: String, _author: String) {
             .wrapContentWidth(Alignment.End)
     )
 }
-
-@Preview(showSystemUi = true)
-@Composable
-private fun ShowPreview() {
-
-}
-

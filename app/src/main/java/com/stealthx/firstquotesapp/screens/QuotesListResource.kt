@@ -32,7 +32,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.stealthx.firstquotesapp.DataManager
 import com.stealthx.firstquotesapp.R
-import com.stealthx.firstquotesapp.models.Quotes
 
 @Composable
 fun QuotesResource(_quote: String, _author: String) {
@@ -47,7 +46,7 @@ fun QuotesResource(_quote: String, _author: String) {
             .fillMaxWidth(1f)
             .padding(horizontal = 15.dp, vertical = 8.dp)
             .clickable {
-                DataManager.switchScreens(_quote, _author)
+                DataManager.    switchScreens(_quote, _author)
             }
     ) {
         Row {
@@ -94,12 +93,4 @@ private fun quotesAndAuthors(_quote: String, _author :String) {
             modifier = Modifier.padding(bottom = 10.dp, end = 15.dp)
         )
     }
-}
-
-
-
-@Preview(showSystemUi = true)
-@Composable
-private fun showPreview() {
-
 }
