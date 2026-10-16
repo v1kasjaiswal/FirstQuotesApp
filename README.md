@@ -4,9 +4,13 @@
 #### <div align="center">**Developed using Modern UI Toolkit - Jetpack Compose**
 </div>
 
-This is my first Jetpack Compose🚀 project. It is a simple Quotes application that displays random quotes and its respective authors. This application has different screens like the quotes list screen📃, loading screen and quote detail screen whereas, it displays quotes from a local file that is already embedded in res/raw/ folder📂. I chose Jetpack Compose over XML due its declarative UI nature⚡, concise code and performance efficiency👀. 
+<div align="justify">
+  
+This is my first Jetpack Compose project. It is a simple Quotes application that displays random quotes and its respective authors. This application has different screens like the quotes list screen, loading screen and quote detail screen whereas, it displays quotes from a local file that is already embedded in res/raw/ folder. I chose Jetpack Compose over XML due its declarative UI nature, concise code and performance efficiency. 
 
-PS - I am not required to create adapters and all stuff to create a simple recycler view 😁.
+PS - I am not required to create adapters and all stuff to create a simple recycler view.
+
+</div>
 
 -----
 
